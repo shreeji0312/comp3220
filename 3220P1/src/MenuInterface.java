@@ -16,7 +16,7 @@ public class MenuInterface {
             option = scan.nextInt();
             switch (option) {
                 case 1:
-                    final reader reader1 = new reader("School.csv");
+                    final reader reader1 = new reader("Schools");
                     System.out.println("There are total number of" + reader1.numberOfRows() + " Schools in windsor");
                     System.out.println("Please select any of the below: \n" + 
                         "1. Find the total C.S.C.P. board Schools \n"+
