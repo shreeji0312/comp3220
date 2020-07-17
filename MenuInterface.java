@@ -16,8 +16,9 @@ public class MenuInterface {
             option = sc.nextInt();
             switch (option) {
                 case 1:
-                    FireStation fireStation = new FireStation();
-                    fireStation.showOptions();
+                    final reader reader1 = new reader("School.csv");
+                    System.out.println("There are total number of" + reader1.numberOfRows() + " Schools in windsor");
+
                     break;
                 case 2:
                     System.out.println("Bye!");
