@@ -11,12 +11,13 @@ public class MenuInterface {
         while(option<4) {
             System.out.println("Please select any of the option: \n" +
                     "1. School\n" +
-                    "2. Exit");
+                    "2. Hospital \n" +
+                    "3. Exit");
             System.out.print("database you want to look over(or press 2 to exit): ");
             option = scan.nextInt();
             switch (option) {
                 case 1:
-                    final reader reader1 = new reader("Schools");
+                    final reader reader1 = new reader("School.csv");
                     System.out.println("There are total number of" + reader1.numberOfRows() + " Schools in windsor");
                     System.out.println("Please select any of the below: \n" + 
                         "1. Find the total C.S.C.P. board Schools \n"+
@@ -78,6 +79,35 @@ public class MenuInterface {
                         }
                     break;
                 case 2:
+                    final reader reader1 = new reader("Hospitals.csv");
+                    System.out.println("There are total number of" + reader1.numberOfRows() + " Hospitals in windsor");
+                    System.out.println("Please select any of the below: \n" + 
+                        "1. Search for the Hospital by name \n" +
+                        "2. want to see whole data: \n" + 
+                        "3. to exit");
+                    int selection = scan.nextInt();
+                    switch (selection) {
+                        case 1:
+                        System.out.println("Please enter name of the Hospital: ");
+                            final String name = scan.next();
+                            int count3 = 0;
+                            int i;
+                            for (i = 0 ;i< reader1.numberOfRows(); i++) {
+                                if (reader1.field(i, 4).equals(name)) {
+                                    System.out.println("the address for the given school name:" + reader1.field(i, 5));
+                                }
+                            }
+                            break;
+                        case 2:
+                            reader1.printrow();
+                            break;
+                        case 3:
+                            break;
+                        default:
+                            System.out.println("Invalid Selection");
+                            break;
+                        }
+                case 3:
                     System.out.println("Bye!");
                     break;
             }
